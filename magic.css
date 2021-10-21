@@ -1,0 +1,35 @@
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: var(--black);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li a {
+    display: block;
+    margin: 10px 10px;
+    padding: 10px;
+    color: var(--purple);
+    text-decoration: none;
+    font-size: 2em;
+}
+
+.logo {
+    height: 100px;
+    width: 200px;
+}
+
+li:active, li:hover, li:focus-within {
+    background-color: rgb(150, 129, 10);
+}
