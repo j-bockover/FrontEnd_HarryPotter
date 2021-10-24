@@ -1,36 +1,112 @@
+/*For the navbar */
 nav {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    background-color: var(--black);
+  position: fixed;
+  top: -10px;
+  left: 0px;
+  width: 100%;
+  background-color: var(--black);
 }
 
 nav ul {
-    margin: 0;
-    padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 nav ul li {
-    display: inline-block;
-    list-style-type: none;
+  display: inline-block;
+  list-style-type: none;
 }
 
 nav ul li a {
-    display: block;
-    margin: 10px 10px;
-    padding: 10px;
-    color: var(--purple);
-    text-decoration: none;
-    font-size: 2em;
+  display: block;
+  margin: 0px 0px;
+  padding: 40px;
+  color: var(--purple);
+  text-decoration: none;
+  font-size: 2em;
+  font-family: "Harry Potter";
+
 }
 
 .logo {
-    height: 100px;
-    width: 200px;
+  height: 70px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
 }
 
-li:active, li:hover, li:focus-within {
-    background-color: rgb(150, 129, 10);
+
+li:active,
+li:hover,
+li:focus-within {
+  background-color: rgb(150, 129, 10);
 }
+
+
+h1 {
+  font-family: "Harry Potter";
+  text-align: center;
+  margin-top: 80px;
+  padding: 20px;
+  font-size: 4em;
+  color: rgb(209, 23, 23);
+  background-image:url("hogwarts.jpg");
+  background-size: 250px;
+}
+h2 {
+  font-family: "Harry Potter";
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  height: 160px;
+  font-size: 4em;
+  color: rgb(252, 252, 252);
+  background-image:url("HogwartsHouses.jpg");
+}
+
+
+/* Two media queries depending on the size of the viewport */
+@media (max-width: 414px) {
+  body {
+    background: var(--purple);
+    color: var(--white);
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 260px;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 1024px) {
+  nav ul li {
+      width: 100%;
+      height: auto;
+  }
+}
+
+
+/*For the font for the tabs */
+@font-face {
+  font-family: "Harry Potter";
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot");
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter")
+      format("svg");
+}
+
+
+
+
 
