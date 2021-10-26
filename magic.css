@@ -106,7 +106,34 @@ h2 {
       format("svg");
 }
 
+/*Adding css that will make a wand appear instead of the mouse cursor */
+* {
+  cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
+} 
 
-
-
+/*For the form on the homepage */
+div {
+  color: white;
+}
+legend {
+  font-size: 2em;
+  color: purple;
+}
+label {
+ font-size: 2em;
+}
+form {
+  size: auto;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: black;
+  max-width: 900px;
+  height: 8000px;
+  width: 100%;
+  margin: auto;
+  font-family: "Harry Potter";
+  color: #222222;
+  text-align: center;
+}
 
