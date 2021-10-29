@@ -129,7 +129,7 @@ form {
   padding: 20px;
   background-color: black;
   max-width: 900px;
-  height: 8000px;
+  height: auto;
   width: 100%;
   margin: auto;
   font-family: "Harry Potter";
