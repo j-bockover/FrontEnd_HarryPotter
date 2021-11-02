@@ -441,24 +441,28 @@ form.addEventListener("submit", (event) => {
           document.getElementById("ravenclaw").hidden = true;
           document.getElementById("hufflepuff").hidden = true;
           document.getElementById("slytherin").hidden = true;
+          document.body.style.backgroundColor = '#e2062c';
       } else if (tiebreak == 1) {
           document.getElementById("ravenclaw").hidden = false;
           document.getElementById("noanswer").hidden = true;
           document.getElementById("gryffindor").hidden = true;
           document.getElementById("hufflepuff").hidden = true;
           document.getElementById("slytherin").hidden = true;
+          document.body.style.backgroundColor = "blue";
       } else if (tiebreak == 2) {
           document.getElementById("hufflepuff").hidden = false;
           document.getElementById("noanswer").hidden = true;
           document.getElementById("gryffindor").hidden = true;
           document.getElementById("ravenclaw").hidden = true;
           document.getElementById("slytherin").hidden = true;
+          document.body.style.backgroundColor = "yellow";
       } else if (tiebreak == 3) {
           document.getElementById("slytherin").hidden = false;
           document.getElementById("noanswer").hidden = true;
           document.getElementById("gryffindor").hidden = true;
           document.getElementById("ravenclaw").hidden = true;
           document.getElementById("hufflepuff").hidden = true;
+          document.body.style.backgroundColor = "green";
       }
   }
   console.log(gryffindor)
