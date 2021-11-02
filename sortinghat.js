@@ -486,4 +486,5 @@ document.getElementById("ravenclaw").hidden = true;
 document.getElementById("hufflepuff").hidden = true;
 document.getElementById("slytherin").hidden = true;
 document.getElementById("noanswer").hidden = true;
+document.body.style.backgroundColor = 'white';
 });
