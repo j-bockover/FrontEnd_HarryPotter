@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Characters</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="character.css">
+</head>
+<body>
+    <form action="" id="search-by-name"></form>
+    <h2>Search Characters by Name</h2>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+
+    <form action="" id="search-by-attribute">
+        <h2>Search Characters by Attributes</h2>
+        <div>
+            <label for="species">Species:</label>
+            <input type="text" name="species">
+            <fieldset>
+                <legend>Gender:</legend>
+                <div>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                </div>
+            </fieldset>
+            <div>
+                <label for="house">House:</label>
+                <select name="house" id="house">
+                    <option value="Gryffindor">Gryffindor</option>
+                    <option value="Hufflepuff">Hufflepuff</option>
+                    <option value="Ravenclaw">Ravenclaw</option>
+                    <option value="Slytherin">Slytherin</option>
+                </select>
+            </div>
+            <div>
+                <input type="checkbox" id="Wizard">
+                <label for="wizard">Wizard</label>
+            </div>
+            <div>
+                <input type="checkbox" id="student">
+                <label for="student">Hogwarts Student</label>
+            </div>
+            <div>
+                <input type="checkbox" id="staff">
+                <label for="staff">Hogwarts Staff</label>
+            </div>
+            <div>
+                <input type="checkbox" id="alive">
+                <label for="alive">Living</label>
+            </div>
+            <div>
+                <input type="checkbox" id="image">
+                <label for="image">Must have image</label>
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+    
+</body>
+</html>
