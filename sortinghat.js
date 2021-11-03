@@ -63,7 +63,7 @@ form.addEventListener("submit", (event) => {
   //submissions for question5
   if (form.elements.question5.value === "miss") {
     hufflepuff++;
-  } else if (form.elements.question5.value === "ask") {
+  } else if (form.elements.question5.value === "stories") {
     gryffindor++;
   } else if (form.elements.question5.value === "think") {
     ravenclaw++;
@@ -280,7 +280,7 @@ form.addEventListener("submit", (event) => {
    //submissions for question20
   if (form.elements.question20.value === "lie") {
     hufflepuff++;
-  } else if (form.elements.question20.value === "ask") {
+  } else if (form.elements.question20.value === "resolve") {
     gryffindor++;
   } else if (form.elements.question20.value === "points") {
     ravenclaw++;
@@ -342,10 +342,10 @@ form.addEventListener("submit", (event) => {
   } else if (form.elements.question25.value === "ginger") {
     gryffindor++;
     slytherin++;
-  } else if (form.elements.question25.value === "black") {
+  } else if (form.elements.question25.value === "blackcat") {
     gryffindor++;
     slytherin++;
-  } else if (form.elements.question25.value === "white") {
+  } else if (form.elements.question25.value === "whitecat") {
     gryffindor++;
     slytherin++;
   } else if (form.elements.question25.value === "tawny") {

@@ -12,17 +12,64 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="magic.css" />
     <title>Spells</title>
+    <script defer src="spells.js"></script>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li><a href="index.html"><img class = "logo" src="harry-potter-logo-tutorial-final.jpg"></a></li>
+          <li>
+            <a href="index.html"
+              ><img class="logo" src="harry-potter-logo-tutorial-final.jpg"
+            /></a>
+          </li>
           <li><a href="#">Characters</a></li>
           <li><a href="spells.html">Spells</a></li>
           <li><a href="#">Potions</a></li>
         </ul>
       </nav>
+      <h1>Spells</h1>
     </header>
+    <style>
+      h1 {
+        margin-top: 135px;
+        padding-top: 50px;
+        padding-bottom: 75px;
+        color: #7fff00;
+        background-image: url("https://images.ctfassets.net/usf1vwtuqyxm/4L0FPfx6vY6Eq4coUwucSg/3d5396be068eddca7300e7036c3c3671/DiagonAlley_PM_B1C5M4_HarryAtOllivanders_Moment.jpg");
+        background-size: 600px;
+      }
+
+      input:invalid ~ span:after {
+        content: "✖";
+        padding-left: 5px;
+        position: absolute;
+      }
+
+      input:valid ~ span:after {
+        content: "✓";
+        padding-left: 5px;
+        position: absolute;
+      }
+    </style>
+
+    <form>
+      <div>
+        <label for="mySearch"></label>
+        <input
+          type="search"
+          id="mySearch"
+          name="q"
+          placeholder="Search Spells..."
+          required
+          size="30"
+          minlength="1"
+          maxlength="30"
+        />
+        <button>Search</button>
+        <span class="validity"></span>
+      </div>
+      <div id="pentagon">Card</div>
+    </form>
   </body>
 </html>
