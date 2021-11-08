@@ -1,0 +1,18 @@
+@import "../styles.css";
+
+.results {
+    display: grid;
+
+}
+
+.character {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--purple);
+}
+
+td {
+    padding-left: 10px;
+}
+
