@@ -16,3 +16,7 @@ td {
     padding-left: 10px;
 }
 
+.category {
+    text-transform: capitalize;
+}
+

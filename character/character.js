@@ -20,11 +20,16 @@ fetch(url)
         // create the character container
         let element = document.createElement('div')
         element.setAttribute('class', 'character col-12 col-md-6')
+        let title = document.createElement('h2')
+        title.innerText = character.name
+        element.appendChild(title)
+
         results.appendChild(element)
 
         // create the table to contain the character information
         let table = document.createElement('table')
         element.appendChild(table)
+        
         
         // one row per character
         let mainrow = table.insertRow()
@@ -53,76 +58,17 @@ fetch(url)
         // bio data arranged in two columns
         table = document.createElement('table')
         bio_td1.appendChild(table)
-
-        let row = table.insertRow()
-        let cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Species"
-        cell = row.insertCell()
-        cell.innerText = character.species
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Gender"
-        cell = row.insertCell()
-        cell.innerText = character.gender
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Birthday"
-        cell = row.insertCell()
-        cell.innerText = character.birth
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Date of death"
-        cell = row.insertCell()
-        cell.innerText = character.death
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Hair Color"
-        cell = row.insertCell()
-        cell.innerText = character.hair_color
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Eye Color"
-        cell = row.insertCell()
-        cell.innerText = character.eye_color
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Ancestry"
-        cell = row.insertCell()
-        cell.innerText = character.ancestry
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Hogwarts House"
-        cell = row.insertCell()
-        cell.innerText = character.house
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Patronus"
-        cell = row.insertCell()
-        cell.innerText = character.patronus
-
-        row = table.insertRow()
-        cell = row.insertCell()
-        cell.setAttribute('class', 'fw-bold')
-        cell.innerText = "Wand Description"
-        cell = row.insertCell()
-        cell.innerText = character.wand
+        
+        for (const [key, value] of Object.entries(character)) {
+            if (key !== 'id') {
+                let row = table.insertRow()
+                let cell = row.insertCell()
+                cell.setAttribute('class', 'category')
+                cell.innerText = `${key.replace(/_/g, ' ')}:`
+                cell = row.insertCell()
+                cell.innerText = value
+            }
+        }
     })
 
 })
