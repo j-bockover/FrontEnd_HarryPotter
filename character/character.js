@@ -5,6 +5,9 @@ const url = 'https://the-harry-potter-database.herokuapp.com/api/1/characters/75
 
 const results = document.querySelector('.results')
 
+let characters
+
+// page load get the characters from the API
 fetch(url)
 .then(response => {
     // returns the response object
@@ -15,6 +18,8 @@ fetch(url)
 .then(data => {
     // returns the data in json format
     console.log('Data', data)
+
+    characters = data
 
     data.forEach((character) => {
         // create the character container
@@ -29,8 +34,7 @@ fetch(url)
         // create the table to contain the character information
         let table = document.createElement('table')
         element.appendChild(table)
-        
-        
+                
         // one row per character
         let mainrow = table.insertRow()
 
@@ -66,6 +70,7 @@ fetch(url)
                 cell.setAttribute('class', 'category')
                 cell.innerText = `${key.replace(/_/g, ' ')}:`
                 cell = row.insertCell()
+                cell.setAttribute('class', 'content')
                 cell.innerText = value
             }
         }
@@ -75,4 +80,5 @@ fetch(url)
 .catch(error => {
     console.error('Request failed', error)
 })
+
 

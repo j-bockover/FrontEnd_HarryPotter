@@ -1,5 +1,3 @@
-@import "../styles.css";
-
 .results {
     display: grid;
 
@@ -14,9 +12,14 @@
 
 td {
     padding-left: 10px;
+    vertical-align: 0px;
+    
 }
 
 .category {
     text-transform: capitalize;
 }
 
+td.category {
+    width: 100px
+}
