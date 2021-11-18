@@ -7,6 +7,9 @@ const results = document.querySelector('.results')
 
 let characters
 
+let keysfront = ['name', 'birth', 'death', 'species', 'ancestry', 'gender', 'hair_color', 'eye_color']
+let keysback = ['wand', 'patronus', 'house', 'associated_groups', 'books_featured_in']
+
 // page load get the characters from the API
 fetch(url)
 .then(response => {
@@ -22,49 +25,63 @@ fetch(url)
     characters = data
 
     data.forEach((character) => {
-        // create the character container
-        let element = document.createElement('div')
-        element.setAttribute('class', 'character col-12 col-md-6')
+        // card method
+        // create the card
+        let flipcard = document.createElement('div')
+        flipcard.setAttribute('class', 'flip-card')
+        
+        let flipcardinner = document.createElement('div')
+        flipcardinner.setAttribute('class', 'flip-card-inner')
+
+        let flipcardfront = document.createElement('div')
+        flipcardfront.setAttribute('class', 'flip-card-front')
+
+        let flipcardback = document.createElement('div')
+        flipcardback.setAttribute('class', 'flip-card-back')
+
+        flipcard.appendChild(flipcardinner)
+        flipcardinner.appendChild(flipcardfront)
+        flipcardinner.appendChild(flipcardback)
+        
+        // add the card to the DOM
+        results.appendChild(flipcard)
+        
+        // fill out front of card
+        // add title 
         let title = document.createElement('h2')
-        title.innerText = character.name
-        element.appendChild(title)
+        title.innerText = character.name 
+        flipcardfront.appendChild(title)
 
-        results.appendChild(element)
-
-        // create the table to contain the character information
+        // create table to contain character information, add it to the card
         let table = document.createElement('table')
-        element.appendChild(table)
-                
-        // one row per character
-        let mainrow = table.insertRow()
+        flipcardfront.appendChild(table)
 
-        // first column contains image
-        let img_td = document.createElement('td')
-        mainrow.appendChild(img_td)
-
-        let figure = document.createElement('figure')
-        img_td.appendChild(figure)
-
-        let image = document.createElement('img')
-        image.setAttribute('src', 'https://placekitten.com/200/300')
-        // #TODO set image height & width
-        image.setAttribute('alt', character.name)
-        figure.appendChild(image)
-
-        let figcaption = document.createElement('figcaption')
-        figcaption.innerText = character.name
-        figure.appendChild(figcaption)
-        
-        // second column contains primary bio data
-        let bio_td1 = document.createElement('td')
-        mainrow.appendChild(bio_td1)
-
-        // bio data arranged in two columns
-        table = document.createElement('table')
-        bio_td1.appendChild(table)
-        
+        // add the information to the table
         for (const [key, value] of Object.entries(character)) {
-            if (key !== 'id') {
+            if (keysfront.includes(key)) {
+                let row = table.insertRow()
+                let cell = row.insertCell()
+                cell.setAttribute('class', 'category')
+                cell.innerText = `${key.replace(/_/g, ' ')}:`
+                cell = row.insertCell()
+                cell.setAttribute('class', 'content')
+                cell.innerText = value
+            }
+        }
+
+        // fill out back of card
+        // add title
+        title = document.createElement('h2')
+        title.innerText = character.name
+        flipcardback.appendChild(title)
+
+        // create table to contain character information, add it to the card
+        table = document.createElement('table')
+        flipcardback.appendChild(table)
+
+        // add the information to the table
+        for (const [key, value] of Object.entries(character)) {
+            if (keysback.includes(key)) {
                 let row = table.insertRow()
                 let cell = row.insertCell()
                 cell.setAttribute('class', 'category')
