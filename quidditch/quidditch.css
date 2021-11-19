@@ -86,57 +86,93 @@ li:focus-within {
   cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
 }
 
-h1 {
-  margin-top: 135px;
-  padding-top: 50px;
-  padding-bottom: 75px;
-  color: #7fff00;
-  background-image: url("https://images.ctfassets.net/usf1vwtuqyxm/4L0FPfx6vY6Eq4coUwucSg/3d5396be068eddca7300e7036c3c3671/DiagonAlley_PM_B1C5M4_HarryAtOllivanders_Moment.jpg");
-  background-size: 600px;
-  font-family: "Harry Potter";
-  text-align: center;
-  font-size: 4em;
-}
 
-/* Code for the cards */
-* {
+
+
+
+
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  /*padding-top: 10px;*/
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
-
-/* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  margin: 20px 0;
+  /*background: #041a5a; */
+  background-image: url("https://i.ytimg.com/vi/clqPPWDUe_U/maxresdefault.jpg");
+  color:rgb(245, 209, 5);
   text-align: center;
-  background-color: #f1f1f1;
 }
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  margin: 5px;
+  background-color: #6589f9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 150px;
+  width: 150px;
+}
+
+.selected {
+  border: 4px solid blue;
+}
+
+.match {
+  border: 4px solid red;
+  background-image: none !important;
+}
+
+.card {
+  position: relative;
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+  height: 150px;
+  width: 150px;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: #fab942 url('https://i.pinimg.com/originals/02/72/e2/0272e24c579b7b20fcd060f04ec0bcae.png') no-repeat center center /
+    contain;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: rgb(255, 255, 255);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: green !important;
+}
+
+
