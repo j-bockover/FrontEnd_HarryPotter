@@ -1,50 +1,71 @@
-//javascript for the spells tab 
+//javascript for the spells tab
 //using the fedeperin API
 
+let variable = document.getElementsByTagName
+console.log(variable)
+$(document).ready(() => {
+  const url = "https://fedeperin-harry-potter-api-en.herokuapp.com/spells";
 
-const url = "https://fedeperin-harry-potter-api-en.herokuapp.com/spells";
+  const addSpellToDOM = (item) => {
+    $("#card").append(
+      $("<div>")
+        .css({
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "20px",
+          paddingTop: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          paddingBottom: "30px",
+          color: "black",
+        })
 
-const app = document.querySelector('#spells');
-app.style.paddingLeft = 0;
+        // .append($(`<img src='${item.imageUrl}'>`))
+        //.append($(`<div id = '${item.id}'> `))
+        .append($("<h3>").text(item.spell))
+        .append($("<p>").text(item.use))
+        .on("mouseover", function () {
+          $(this).css({
+            backgroundColor: "#004170",
+            color: "white",
+          });
+        })
+        .on("mouseout", function () {
+          $(this).css({
+            backgroundColor: "#17a2b8",
+            color: "black",
+          });
+        })
+    );
+    
 
-const addSpellToDOM = (item) => {
- console.log(item);
- let element = document.createElement('div');
- let id = document.createElement('h4');
- let spell = document.createElement('p');
- let use = document.createElement("p");
+  };
+
+  // Fetch all characters using the Promise Implementation
+  const fetchAllSpells = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.group("Fetching All HP Spells w/ Promise Implementation");
+        console.log("Data", data);
+        data.forEach((item) => {
+          addSpellToDOM(item);
+        });
+
+let val = Object.keys.splice(0,1);
+console.log(val);
 
 
- element.style.display = 'flex';
- element.style.flexDirection = 'column';
- element.style.alignItems = 'center';
- element.style.marginTop = '20px';
-
- id.textContent = item.name;
- spell.textContent = item.spell;
- use.textContent = item.use;
-
- element.append(id);
- element.append(spell);
- element.append(use);
-
- app.append(element);
-}
 
 
-const fetchAllSpells = (url) => {
-  fetch(url)
-  .then((response) => response.json())
-  .then((data) => {
-    // It brings all data at the API and it shows it at the console
-    console.log(data);
-    console.log(data[0].id) //retrieve first spell information 1 out of 72 spells 
-    console.log(data[0].spell);
-    console.log(data[0].use);
-    addSpellToDOM(data)
-  })
-  .catch((error) => console.log(error));
-//now that the spells info is gathered we need to bring it to the spells html page 
-//also need to make the cards for each spell stand out 
-};
-fetchAllSpells(url);
+        console.groupEnd();
+      })
+      .catch((error) =>
+        console.error("An error occurred please try again", error)
+      );
+  };
+  fetchAllSpells(url);
+});
+
+

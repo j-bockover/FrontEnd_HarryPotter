@@ -1,0 +1,178 @@
+/*For the navbar */
+nav {
+  position: fixed;
+  top: -10px;
+  left: 0px;
+  width: 100%;
+  background-color: black;
+}
+
+nav ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav ul li a {
+  display: block;
+  margin: 0px 0px;
+  padding: 40px;
+  color: rgb(195, 6, 195);
+  text-decoration: none;
+  font-size: 2em;
+  font-family: "Harry Potter";
+}
+
+.logo {
+  height: 70px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
+
+li:active,
+li:hover,
+li:focus-within {
+  background-color: rgb(150, 129, 10);
+}
+
+/* Two media queries depending on the size of the viewport */
+@media (max-width: 414px) {
+  body {
+    background: var(--purple);
+    color: var(--white);
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 260px;
+  }
+}
+/* This is to resize the website 
+@media (min-width: 415px) and (max-width: 1024px) {
+  nav ul li {
+    width: 100%;
+    height: auto;
+  }
+}
+*/
+
+/*For the font for the tabs */
+@font-face {
+  font-family: "Harry Potter";
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot");
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter")
+      format("svg");
+}
+
+/*Adding css that will make a wand appear instead of the mouse cursor */
+* {
+  cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
+}
+
+
+
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /*padding-top: 10px;*/
+}
+
+body {
+  margin: 20px 0;
+  /*background: #041a5a; */
+  background-image: url("https://i.ytimg.com/vi/clqPPWDUe_U/maxresdefault.jpg");
+  color:rgb(245, 209, 5);
+  text-align: center;
+}
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  margin: 5px;
+  background-color: #6589f9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 150px;
+  width: 150px;
+}
+
+.selected {
+  border: 4px solid blue;
+}
+
+.match {
+  border: 4px solid red;
+  background-image: none !important;
+}
+
+.card {
+  position: relative;
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+  height: 150px;
+  width: 150px;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: #fab942 url('https://i.pinimg.com/originals/02/72/e2/0272e24c579b7b20fcd060f04ec0bcae.png') no-repeat center center /
+    contain;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: rgb(255, 255, 255);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: green !important;
+}
+
+
